@@ -1,0 +1,118 @@
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address,
+ big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd,
+ ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, input, select, textarea {
+	padding:0;
+	margin:0;
+	text-decoration:none;
+	color:black;
+	font-family:verdana, sans-serif;
+	font-size:1em;
+}
+body {font-size:88%; /* Resets 1em to 14px (62.5% = 10px / 70% = 11px / 75% = 12px / 87.5 = 14px)*/}
+* html body {font-size:14px; /* IE6 */}
+ul,li{
+	list-style-type:none;
+}
+textarea { width:95%; }
+body {
+	height:100%;
+	width:100%;
+	background-color:#FFFBDB;
+	background-image:url(../../img/bg.gif);
+	background-repeat:repeat-x;
+	background-attachment:fixed;
+	background-position:bottom;
+}
+#main {
+	width:60%;
+	border:solid 1px black;
+	position:absolute;
+	left:50%;
+	margin-left:-30%;
+	top:5%;
+	background-color:white;
+}
+#header {
+	padding:10px;
+	margin-bottom:10px;
+	border-bottom:solid 1px black;
+}
+#header ul, #header li {
+	display:inline;
+}
+#header h1 {
+	font-size:2em;
+	text-align:center;
+}
+#headlogo {
+	width:100%;
+}
+#navcontainer {
+	float:left;
+	width:20%;
+}
+#nav {
+	margin-left:10px;
+}
+#nav li {
+	padding-bottom:5px;
+}
+#contentcontainer {
+	margin-left:20%;
+	padding-right:5px;
+}
+#contentcontainer p{
+	padding-bottom:10px;
+}
+#contentcontainer h1 {
+	font-size:1.5em;
+	margin-bottom:5px;
+}
+#contentcontainer img{
+	border:solid 1px grey;
+	margin:5px;
+}
+#pageslist{
+	width:100%;
+	text-align:center;
+}
+#footer {
+	border-top:solid 1px black;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+#footer p {
+	text-align:center;
+}
+.date {
+	font-size:10px;
+	color:grey;
+	margin-bottom:10px;
+}
+.current {
+	color:grey;
+}
+.floatright {
+	float:right;
+}
+.floatleft {
+	float:left;
+}
+.clearfloat {
+	clear:both;
+}
+.spacer {
+	height:5px;
+	width:90%;
+}
+.bigspacer {
+	height:10px;
+	width:90%;
+}
+.grey {
+	background-color:grey;
+}
+.bold {
+	font-weight:bold;
+}

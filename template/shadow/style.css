@@ -1,0 +1,44 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address,
+ big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd,
+ ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, input, select, textarea {
+	padding:0;
+	margin:0;
+	text-decoration:none;
+	color:black;
+	font-family:verdana, sans-serif;
+	font-size:1em;
+}
+body {font-size:88%; /* Resets 1em to 14px (62.5% = 10px / 70% = 11px / 75% = 12px / 87.5 = 14px)*/}
+* html body {font-size:14px; /* IE6 */}
+ul,li{
+	list-style-type:none;
+}
+
+body{
+	background-color:grey;
+}
+#main{
+	margin:0 auto;
+}
+#content{
+	width:572px;
+}
+#c_top{
+	padding-left:25px;
+	padding-right:25px;
+	padding-top:20px;
+	line-height:20px;
+	text-align:center;
+	height:38px;
+	background-image:url(./img/top_wide.png);
+}
+#c_bottom{
+	height:58px;
+	background-image:url(./img/bottom_wide.png);
+}
+#c_main{
+	background-image:url(./img/center_wide.png);
+	padding-left:25px;
+	padding-right:25px;
+	background-repeat:repeat-y;
+}
