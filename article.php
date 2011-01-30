@@ -28,9 +28,9 @@ if(!$config->GetValue("CACHING") || !$content){
 				'CONT'			=>	$article->GetArticle(),
 				'TITLE'			=>	$config->GetValue("TITLE").gettitle($artno),
 				'HEAD_TITLE'	=>	$config->GetValue("HEAD_TITLE"),
-				'NAV'			=>	createnav($artno)),
+				'NAV'			=>	createnav($artno),
 				'PAGES'			=>	""	//No need for multiple pages. Leaves an empty Container but who cares...
-				);
+				));
 	$content=$template->getFinalSite();
 }
 //everything should be done, lets use the html code generated inside $content

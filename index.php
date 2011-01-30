@@ -30,14 +30,15 @@ if(!$config->GetValue("CACHING") || !$content){
 	$query=mysql_query(
 	"SELECT  `".DB_PREFIX."content`.`id`
 	FROM  `".DB_PREFIX."categories` 
-	LEFT JOIN  `fbcms`.`".DB_PREFIX."cat_cont` ON  `".DB_PREFIX."categories`.`alias` =  `".DB_PREFIX."cat_cont`.`cat_alias` 
-	LEFT JOIN  `fbcms`.`".DB_PREFIX."content` ON  `".DB_PREFIX."cat_cont`.`cont_id` =  `".DB_PREFIX."content`.`id` 
+	LEFT JOIN  `".MYSQL_DATABASE."`.`".DB_PREFIX."cat_cont` ON  `".DB_PREFIX."categories`.`alias` =  `".DB_PREFIX."cat_cont`.`cat_alias` 
+	LEFT JOIN  `".MYSQL_DATABASE."`.`".DB_PREFIX."content` ON  `".DB_PREFIX."cat_cont`.`cont_id` =  `".DB_PREFIX."content`.`id` 
 	WHERE (
 		`".DB_PREFIX."categories`.`alias` =  '".$id."'
 	)
 	ORDER BY `".DB_PREFIX."content`.`id` DESC");
 	//All of that SQL stuff only to check how many articles we actually have in that category...
 	$no_of_articles = mysql_num_rows($query);
+	echo mysql_error();
 	
 	//Gives us the number of pages we need
 	$num_pages = ceil($no_of_articles/$config->GetValue("ARTICLES_PER_PAGE"));

@@ -9,8 +9,8 @@ function getArticlesInCategory($id,$offset) {
 	$query=mysql_query(
 	"SELECT  `".DB_PREFIX."content`.`id`
 	FROM  `".DB_PREFIX."categories` 
-	LEFT JOIN  `fbcms`.`".DB_PREFIX."cat_cont` ON  `".DB_PREFIX."categories`.`alias` =  `".DB_PREFIX."cat_cont`.`cat_alias` 
-	LEFT JOIN  `fbcms`.`".DB_PREFIX."content` ON  `".DB_PREFIX."cat_cont`.`cont_id` =  `".DB_PREFIX."content`.`id` 
+	LEFT JOIN  `".MYSQL_DATABASE."`.`".DB_PREFIX."cat_cont` ON  `".DB_PREFIX."categories`.`alias` =  `".DB_PREFIX."cat_cont`.`cat_alias` 
+	LEFT JOIN  `".MYSQL_DATABASE."`.`".DB_PREFIX."content` ON  `".DB_PREFIX."cat_cont`.`cont_id` =  `".DB_PREFIX."content`.`id` 
 	WHERE (
 		`".DB_PREFIX."categories`.`alias` =  '".$id."'
 	)
