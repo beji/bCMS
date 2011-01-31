@@ -38,7 +38,6 @@ if(!$config->GetValue("CACHING") || !$content){
 	ORDER BY `".DB_PREFIX."content`.`id` DESC");
 	//All of that SQL stuff only to check how many articles we actually have in that category...
 	$no_of_articles = mysql_num_rows($query);
-	echo mysql_error();
 	
 	//Gives us the number of pages we need
 	$num_pages = ceil($no_of_articles/$config->GetValue("ARTICLES_PER_PAGE"));

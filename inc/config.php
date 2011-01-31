@@ -19,15 +19,25 @@ class Config {
 	function SetValue($key, $value, $description = 0) {
 		//Try to update an existing value first
 		if($description!=0) {
-			$query=mysql_query("UPDATE  `".DB_PREFIX."config` SET  `value` =  '".$value."',`description` = '".$description."'  WHERE `key` =  '".$key."'");
+			$sql="UPDATE  `".DB_PREFIX."config` SET  `value` =  '".$value."',`description` = '".$description."'  WHERE `key` =  '".$key."'";
 		}
 		else {
-			$query=mysql_query("UPDATE  `".DB_PREFIX."config` SET  `value` =  '".$value."' WHERE `key` =  '".$key."'");
+			$sql="UPDATE  `".DB_PREFIX."config` SET  `value` =  '".$value."' WHERE `key` =  '".$key."'";
 		}
-		if (!$query) {
+		$query=mysql_query($sql);
+		if (mysql_affected_rows($query)==0) {
 			//Updating failed, lets try to insert a new value
-			$query=mysql_query("INSERT INTO (`key`, `value`,`description`) VALUES ('".$key."', '".$value."', '".$description."');");
-			if(!$query){
+			$query=mysql_query("
+				INSERT INTO  `".MYSQL_DATABASE."`.`".DB_PREFIX."config` (
+					`key` ,
+					`value` ,
+					`description`
+					)
+					VALUES (
+					'".$key."',  '".$value."',  '".$description."'
+					);
+					");
+			if(mysql_affected_rows($query)==0){
 				die("Invalid SQL Request, could not insert/update config! "  . mysql_error());
 			}
 		}
@@ -35,11 +45,16 @@ class Config {
 	//Returns the value $value of the given variable $key
 	function GetValue($key){
 		$query=mysql_query("SELECT `value` FROM `".DB_PREFIX."config` WHERE `key` = '".$key."'");
-		$value=mysql_fetch_array($query);
-			if(!$query){
-				die("Invalid SQL Request! "  . mysql_error());
-			}
-			else return $value['value'];
+		if(!$query){
+			die("Invalid SQL Request! "  . mysql_error());
+		}
+		if(mysql_num_rows($query)==0){
+			return false;
+		}
+		else{
+			$value=mysql_fetch_array($query);
+			return $value['value'];
+		}
 	}
 }
 ?>

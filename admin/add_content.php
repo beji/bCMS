@@ -3,9 +3,9 @@
 	if(!isset($_POST['content'])){
 
 		echo "<form method=\"post\" name=\"formular\" action=\"index.php?id=add_content\">\n
-				<label for=\"title\">Titel</label>
+				<label for=\"title\">Title</label>
 				<input name=\"title\" type=\"text\"><br>
-				<label for=\"title\">Datum</label>
+				<label for=\"title\">Date</label>
 				<input name=\"date\" type=\"text\"><br>
 				<textarea id=\"cont\" class=\"mce\" name=\"content\" cols=\"50\" rows=\"15\"></textarea>";
 		$query=mysql_query("SELECT name,alias FROM ".DB_PREFIX."categories ORDER BY pos ASC");
@@ -17,19 +17,19 @@
 			echo"<option value=\"".$datensatz['alias']."\">".$datensatz['name']."(".$datensatz['alias'].")</option>";
 		}
 		echo "</select>";
-		echo "<input type=\"submit\" value=\"Speichern\">
+		echo "<input type=\"submit\" value=\"save\">
 			</form>\n";
-			echo "<br><a href=\"pic_upload.php\" onclick=\"FensterOeffnen(this.href); return false\">---Bild hochladen---(Popup)</a>";
+			echo "<br><a href=\"pic_upload.php\" onclick=\"FensterOeffnen(this.href); return false\">---Upload a picture---(Popup)</a>";
 	}
 	else{
 		include "../inc/db2date.php";
-		echo "Artikel anlegen<br>";
+		echo "Saving article<br>";
 		$date=date2db($_POST['date']);
 		$insertquery="INSERT INTO ".DB_PREFIX."content(date,title,content) 
 					VALUES('".$date."','".$_POST['title']."','".$_POST['content']."')";
 		$query=mysql_query($insertquery);
 		if($query){
-			echo "Artikel angelegt<br>";
+			echo "article saved<br>";
 			$getid="SELECT  `".DB_PREFIX."content`.`id` 
 					FROM  `".DB_PREFIX."content` 
 					WHERE (
@@ -54,7 +54,7 @@
 									);";
 					$query=mysql_query($cat_cont_insert);
 				}
-				echo "<br>Artikel erfolgreich hinzugefuegt!";
+				echo "<br>article successfully added!";
 			}
 			else echo mysql_error();
 		}
