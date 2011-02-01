@@ -3,7 +3,6 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 define('IN_BCMS',true);
 require "./inc/config.php";
-
 $config = new Config();
 
 //if we have no id, we are on the news page
