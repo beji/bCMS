@@ -9,14 +9,12 @@ class Loc{
 		if($lang==0){
 			$lang = $config->GetValue("DEFAULT_LANG");
 			if($lang===false){
-				echo "BLA";
 				$config->SetValue("DEFAULT_LANG","enEN","The default language");
 				$lang="enEN";
 			}
 			echo $lang;
 		}
 		else{
-			echo "BLABLUBB";
 			if (!file_exists("./lang/msg_".$lang.".php") && !file_exists("../lang/msg_".$lang.".php")){
 				$lang="enEN";
 			}
