@@ -23,8 +23,12 @@ class Log {
 		fclose($handle);
 	}
 	function clearDebugLog(){
+		$handle = fopen($this->logpath."debug.log", "w+");
+		fclose($handle);
 	}
 	function clearErrorLog(){
+		$handle = fopen($this->logpath."error.log", "w+");
+		fclose($handle);
 	}
 }
 ?>
