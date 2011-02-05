@@ -10,8 +10,21 @@ class Template{
 			$config = new Config();
 			$template = $config->GetValue("TEMPLATE");
 		}
-		$this->maintemplate="./template/".$template."/template.html";
-		$this->articletemplate="./template/".$template."/article.html";
+		if(file_exists("./template/".$template."/template.html")){
+			$this->maintemplate="./template/".$template."/template.html";
+			$this->articletemplate="./template/".$template."/article.html";		
+		}
+		elseif(file_exists("../template/".$template."/template.html")){
+			$this->maintemplate="../template/".$template."/template.html";
+			$this->articletemplate="../template/".$template."/article.html";		
+		}
+		else{
+			if (file_exists("./inc/log.php")) {$logpath="./inc/log.php";}
+			elseif (file_exists("../inc/log.php")) {$logpath="../inc/log.php";}
+			include_once $logpath;
+			$log = new Log();
+			$log->writeErrorLog(__FILE__,__LINE__,"Template $template not found!");
+		}
 	}
 	function assignVars($vars){
 		if($this->maintemplate===false || $this->articletemplate===false){

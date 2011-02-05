@@ -38,7 +38,11 @@ class Config {
 					);
 					");
 			if(mysql_affected_rows($query)==0){
-				die("Invalid SQL Request, could not insert/update config! "  . mysql_error());
+				if (file_exists("./inc/log.php")) {$logpath="./inc/log.php";}
+				elseif (file_exists("../inc/log.php")) {$logpath="../inc/log.php";}
+				include_once $logpath;
+				$log = new Log();
+				$log->writeErrorLog(__FILE__,__LINE__,"could not insert/update Key $key , value $value config! ".mysql_error());
 			}
 		}
 	}
@@ -49,6 +53,11 @@ class Config {
 			die("Invalid SQL Request! "  . mysql_error());
 		}
 		if(mysql_num_rows($query)==0){
+			if (file_exists("./inc/log.php")) {$logpath="./inc/log.php";}
+			elseif (file_exists("../inc/log.php")) {$logpath="../inc/log.php";}
+			include_once $logpath;
+			$log = new Log();
+			$log->writeDebugLog(__FILE__,__LINE__,"Variable $key not set in config Table");
 			return false;
 		}
 		else{

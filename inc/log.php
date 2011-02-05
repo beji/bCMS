@@ -1,4 +1,5 @@
 <?php
+if(!defined('IN_BCMS')) die;
 class Log {
 //date("m.d.y H:i:s")." File: ".__FILE__." on line: ".__LINE__.": ".ERRORMSG
 	private $logpath;
