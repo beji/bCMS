@@ -15,7 +15,6 @@ class Loc{
 		}
 		else{
 			if (!file_exists("./lang/msg_".$lang.".php") && !file_exists("../lang/msg_".$lang.".php")){
-				echo "Hier her";
 				if (file_exists("./inc/log.php")) {$logpath="./inc/log.php";}
 				elseif (file_exists("../inc/log.php")) {$logpath="../inc/log.php";}
 				include_once $logpath;
