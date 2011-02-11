@@ -2,7 +2,7 @@
 	if(!defined('IN_BCMS')) die;
 	include_once "../inc/config.php";
 	include_once "../inc/loc.php";
-	if(!isset($loc)){
+	if(!isset($loc) && !is_object($loc)){
 		$loc = new Loc();
 	}
 	if(!isset($_POST['content'])){

@@ -9,7 +9,7 @@ define('IN_BCMS',true);?>
 if (isset($_POST['user']) && isset($_POST['pw'])){
 	require_once "../inc/config.php";
 	include_once "../inc/loc.php";
-	if(!isset($loc)){
+	if(!isset($loc) && !is_object($loc)){
 		$loc = new Loc();
 	}
 	$query=mysql_query("SELECT  `".DB_PREFIX."users` . * 
@@ -28,7 +28,7 @@ if (isset($_POST['user']) && isset($_POST['pw'])){
 }
 else{
 	include_once "../inc/loc.php";
-	if(!isset($loc)){
+	if(!isset($loc) && !is_object($loc)){
 		$loc = new Loc();
 	}
 	echo "<form name=\"login\" method=\"post\" action=\"login.php\">";
