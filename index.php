@@ -2,7 +2,6 @@
 define('IN_BCMS',true);
 require "./inc/config.php";
 $config = new Config();
-
 //if we have no id, we are on the news page
 $id = isset($_GET['id']) ? $_GET['id'] : "news";
 //if Caching is enabled, check for existing Cachefile

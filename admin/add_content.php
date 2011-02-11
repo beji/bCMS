@@ -1,4 +1,5 @@
 <?php
+	define('IN_BCMS',true);
 	include "../inc/config.php";
 	if(!isset($_POST['content'])){
 

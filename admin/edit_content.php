@@ -1,5 +1,6 @@
 <?php
 session_start();
+define('IN_BCMS',true);
 if(!isset($_SESSION['login']) || $_SESSION['login']!=1) echo "Kein Zugang! <a href=\"login.php\">Erstmal einloggen!</a>";
 else{
 	echo"<html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">

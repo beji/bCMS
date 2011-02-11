@@ -178,6 +178,7 @@ elseif($_GET['step']==4){
 		('HEAD_TITLE', '".$_POST['head_title']."', 'Text displayed instead of {HEAD_TITLE}'),
 		('TEMPLATE', 'standard', 'Name of the active Template'),
 		('CACHING', '".$_POST['caching']."', '0 = Caching deactivated,\r\n1 = Caching active'),
+		('PATH', '".str_replace("\\","/",dirname(__FILE__))."', 'The directory the CMS is located'),
 		('ARTICLES_PER_PAGE', '5', 'Shown articles per page');"
 	);
 	if (!$query) {

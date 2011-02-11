@@ -1,5 +1,5 @@
-<?php session_start();
-$_SESSION['ls']=0; ?>
+<?php session_start(); 
+define('IN_BCMS',true);?>
 <html>
 </html>
 <head>
@@ -7,8 +7,13 @@ $_SESSION['ls']=0; ?>
 <body>
 <?php
 if (isset($_POST['user']) && isset($_POST['pw'])){
-	include "./config.php";
-	$query=mysql_query("SELECT * FROM ".$SITEVARS['DB_PREFIX']."users");
+	require_once "../inc/config.php";
+	$query=mysql_query("SELECT  `".DB_PREFIX."users` . * 
+						FROM  `".DB_PREFIX."users` 
+						WHERE (
+						`".DB_PREFIX."users`.`user` =  \"".$_POST['user']."\"
+						)");
+	echo mysql_error();
 	while ($datensatz=mysql_fetch_array($query)){
 		if(($datensatz['user']==$_POST['user']) && ($datensatz['password']==md5($_POST['pw'])) && ($datensatz['rank']==10)){
 			$_SESSION['login']=1;

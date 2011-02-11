@@ -12,10 +12,15 @@ class Article{
 	}
 	/*Gets the article from the db, generates the html code with the template and returns the code as a string*/
 	function GetArticle() {
+		if($this->id===false){
+			include_once "./inc/log.php";
+			$log = new Log();
+			$log->writeErrorLog(__FILE__,__LINE__,"Article id not set!");
+			return false;
+		}
 		require_once "./inc/db2date.php";
 		require_once "./inc/template.php";
 		$config =  new Config();
-		if($this->id===false) die("Error! Article-ID not set!");
 		$query=mysql_query("SELECT * FROM ".DB_PREFIX."content WHERE id='".$this->id."'");
 		$datensatz=mysql_fetch_array($query);
 		$article="";

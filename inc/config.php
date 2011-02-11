@@ -2,6 +2,8 @@
 if(!defined('IN_BCMS')) die;
 if (file_exists("./inc/sqldata.php")) {$sqlpath="./inc/sqldata.php";}
 elseif (file_exists("../inc/sqldata.php")) {$sqlpath="../inc/sqldata.php";}
+elseif (file_exists("./sqldata.php")) {$sqlpath="./sqldata.php";}
+
 include $sqlpath;
 
 /*Class to get/set Values in the config-Table
@@ -25,7 +27,7 @@ class Config {
 			$sql="UPDATE  `".DB_PREFIX."config` SET  `value` =  '".$value."' WHERE `key` =  '".$key."'";
 		}
 		$query=mysql_query($sql);
-		if (mysql_affected_rows($query)==0) {
+		if (mysql_affected_rows()==0) {
 			//Updating failed, lets try to insert a new value
 			$query=mysql_query("
 				INSERT INTO  `".MYSQL_DATABASE."`.`".DB_PREFIX."config` (
@@ -37,7 +39,7 @@ class Config {
 					'".$key."',  '".$value."',  '".$description."'
 					);
 					");
-			if(mysql_affected_rows($query)==0){
+			if(mysql_affected_rows()==0){
 				if (file_exists("./inc/log.php")) {$logpath="./inc/log.php";}
 				elseif (file_exists("../inc/log.php")) {$logpath="../inc/log.php";}
 				include_once $logpath;
