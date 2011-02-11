@@ -8,6 +8,10 @@ define('IN_BCMS',true);?>
 <?php
 if (isset($_POST['user']) && isset($_POST['pw'])){
 	require_once "../inc/config.php";
+	include_once "../inc/loc.php";
+	if(!isset($loc)){
+		$loc = new Loc();
+	}
 	$query=mysql_query("SELECT  `".DB_PREFIX."users` . * 
 						FROM  `".DB_PREFIX."users` 
 						WHERE (
@@ -17,15 +21,19 @@ if (isset($_POST['user']) && isset($_POST['pw'])){
 	while ($datensatz=mysql_fetch_array($query)){
 		if(($datensatz['user']==$_POST['user']) && ($datensatz['password']==md5($_POST['pw'])) && ($datensatz['rank']==10)){
 			$_SESSION['login']=1;
-			echo "Login erfolgreich!<br><a href=\"index.php\">Hier gehts weiter!</a>";
+			echo $loc->getLocString("A_LOGIN_SUCCESS");
 		}
-		else echo "Bitte Eingaben überprüfen!";
+		else echo $loc->getLocString("A_LOGIN_FAILED");
 	}
 }
 else{
+	include_once "../inc/loc.php";
+	if(!isset($loc)){
+		$loc = new Loc();
+	}
 	echo "<form name=\"login\" method=\"post\" action=\"login.php\">";
-	echo "User Name: <input type=\"text\" name=\"user\"> Passwort: <input type=\"password\" name=\"pw\">";
-	echo "<input type=\"submit\" name=\"Submit\" value=\"einloggen\"></form>";
+	echo "User Name: <input type=\"text\" name=\"user\"> ".$loc->getLocString("PASS").": <input type=\"password\" name=\"pw\">";
+	echo "<input type=\"submit\" name=\"Submit\" value=\"".$loc->getLocString("LOGIN")."\"></form>";
 }
 ?>
 </body>

@@ -45,7 +45,9 @@ if(!$config->GetValue("CACHING") || !$content){
 	//This creates the Links to change pages if we need more than one
 	 $pages ="";
 	 if($num_pages>1){
-		$pages="Seiten:<br>";
+		include_once "./inc/loc.php";
+		$loc = new Loc();
+		$pages = $loc->getLocString("PAGES").":<br>";
 		for($i=1;$i<=$num_pages;$i++){
 			if($i==$currentpage){	//current page needs no link, we are already there ;)
 				$pages=$pages." $i ";

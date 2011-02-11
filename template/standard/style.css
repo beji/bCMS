@@ -74,8 +74,8 @@ body {
 	margin:5px;
 }
 #pageslist{
-	width:100%;
-	text-align:center;
+	position:relative;
+	left:35%;
 }
 #footer {
 	border-top:solid 1px black;

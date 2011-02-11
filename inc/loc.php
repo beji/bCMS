@@ -27,8 +27,7 @@ class Loc{
 		if (file_exists("./lang/msg_".$lang.".php")) {$lngpath="./lang/msg_".$lang.".php";}
 		elseif (file_exists("../lang/msg_".$lang.".php")) {$lngpath="../lang/msg_".$lang.".php";}
 		
-		include_once $lngpath;
-		//include_once "./lang/msg_".$lang.".php";
+		include $lngpath;
 		
 		if($loc[$string]==NULL){
 			if (file_exists("./lang/msg_enEN.php")) {$lngpath="./lang/msg_enEN.php";}
