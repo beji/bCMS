@@ -19,15 +19,16 @@ echo "<table class=\"artl\">\n
 <th>".$loc->getLocString("TITLE")."</th>\n
 <th>".$loc->getLocString("A_CONTENT")."</th>\n
 <th>".$loc->getLocString("CATS")."</th>\n
+<th>".$loc->getLocString("A_OPS")."</th>\n
+
 ";
 while ($data=mysql_fetch_array($result)){
 	$catsql="SELECT  `".DB_PREFIX."categories` . * 
-		FROM  `".DB_PREFIX."cat_cont` 
-		LEFT JOIN  `fbcms`.`".DB_PREFIX."categories` ON  `".DB_PREFIX."cat_cont`.`cat_alias` =  `".DB_PREFIX."categories`.`alias` 
-		WHERE (
-		`".DB_PREFIX."cat_cont`.`cont_id` = ".$data['id']."
-		)";
-	echo mysql_error();
+			FROM  `".DB_PREFIX."cat_cont` 
+			LEFT JOIN  `".MYSQL_DATABASE."`.`".DB_PREFIX."categories` ON  `".DB_PREFIX."cat_cont`.`cat_alias` =  `".DB_PREFIX."categories`.`alias` 
+			WHERE (
+			`".DB_PREFIX."cat_cont`.`cont_id` =  ".$data['id']."
+			)";
 	$catquery=mysql_query($catsql);
 	$catnum=mysql_num_rows($catquery);
 	$catstring="";
@@ -41,12 +42,14 @@ while ($data=mysql_fetch_array($result)){
 	if(strlen($cont)>50){
 		$cont=substr($cont,0,50)."...";
 	}
+	$opstring = "<a href=\"index.php?id=edit_content&aid=".$data['id']."\">Edit</a>";
 	echo "<tr>
 		<td>".$data['id']."</td>\n
 		<td>".db2date($data['date'])."</td>\n
 		<td>".$data['title']."</td>\n
 		<td>".$cont."</td>\n
 		<td>".$catstring."</td>\n
+		<td>".$opstring."</td>\n
 
 	</tr>";
 }

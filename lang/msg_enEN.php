@@ -23,5 +23,6 @@ $loc = array(
 'A_NAV_LIST_ARTICLES'	=>	"list articles",
 'A_ID'					=>	"ID",
 'A_CONTENT'				=>	"Content",
+'A_OPS'				=>	"Operations",
 );	
 ?>
