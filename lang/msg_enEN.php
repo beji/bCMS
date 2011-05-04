@@ -8,6 +8,7 @@ $loc = array(
 'TITLE'		=>	"Title",
 'DATE'		=>	"Date",
 'CATS'		=>	"Categories",
+'EDIT'		=>	"edit",
 
 //Admin Backend
 'A_NOTLOGGEDIN'			=>	"No entry! <a href=\"login.php\">Please log in!</a>",
