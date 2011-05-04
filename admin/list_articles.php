@@ -6,8 +6,30 @@ include "../inc/db2date.php";
 if(!isset($loc) && !is_object($loc)){
 	$loc = new Loc();
 }
-$query = "SELECT `".DB_PREFIX."content`.* FROM `".DB_PREFIX."content`";
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+$query = "SELECT `".DB_PREFIX."categories`.`alias`, `".DB_PREFIX."categories`.`name`
+FROM `".DB_PREFIX."categories`";
+
 $result = mysql_query($query);
+while ($cat=mysql_fetch_array($result)){
+    echo '<a href="index.php?id=list_articles&cat='.$cat['alias'].'">'.$cat['name'].'</a> ';
+};
+
+if(isset($_GET['cat']) && (strpos($_GET['cat']," "===false))){
+    $query = "SELECT  `bcms_content` . *
+FROM  `bcms_cat_cont`
+LEFT JOIN  `bcms`.`bcms_content` ON  `bcms_cat_cont`.`cont_id` =  `bcms_content`.`id`
+WHERE (
+`bcms_cat_cont`.`cat_alias` =  '".$_GET['cat']."'
+)";
+    
+}
+else{
+   $query = "SELECT `".DB_PREFIX."content`.* FROM `".DB_PREFIX."content`";
+}
+$result = mysql_query($query);
+echo mysql_error();
 if(!$result){
 	include_once "../inc/log.php";
 	$log = new Log();
