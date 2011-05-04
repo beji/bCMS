@@ -5,6 +5,7 @@ $loc = array(
 'LOGIN'		=>	"Einloggen",
 'PASS'		=>	"Passwort",
 'USERNAME'	=>	"Benutzername",
+'EDIT'		=>	"edit",
 
 //Admin Backend
 'A_NOTLOGGEDIN'		=>	"Kein Zugang! <a href=\"login.php\">Bitte einloggen!</a>",

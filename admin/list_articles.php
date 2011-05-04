@@ -42,7 +42,7 @@ while ($data=mysql_fetch_array($result)){
 	if(strlen($cont)>50){
 		$cont=substr($cont,0,50)."...";
 	}
-	$opstring = "<a href=\"index.php?id=edit_content&aid=".$data['id']."\">Edit</a>";
+	$opstring = "<a href=\"index.php?id=edit_content&aid=".$data['id']."\">".$loc->getLocString("EDIT")."</a>";
 	echo "<tr>
 		<td>".$data['id']."</td>\n
 		<td>".db2date($data['date'])."</td>\n
