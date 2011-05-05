@@ -1,19 +1,35 @@
+/* ~~~~~~~~~~~ default reset / BEGIN ~~~~~~~~~~~ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, input, select, textarea {margin:0; padding:0; outline:0; font-family:arial, helvetica, sans-serif; font-size:1em; color:#444444; vertical-align:baseline;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {border:0; background:transparent;}
+body {font-size:75%; /* Resets 1em to 12px (62.5% = 10px / 70% = 11px / 75% = 12px) */ background-color:#fff; text-align:left;}
+blockquote, q {quotes:none;}
+blockquote:before, blockquote:after, q:before, q:after {content:''; content:none;}
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address,
- big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd,
- ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, input, select, textarea {
-	padding:0;
-	margin:0;
-	text-decoration:none;
-	color:black;
-	font-family:verdana, sans-serif;
-	font-size:1em;
-}
-body {font-size:88%; /* Resets 1em to 14px (62.5% = 10px / 70% = 11px / 75% = 12px / 87.5 = 14px)*/}
-* html body {font-size:14px; /* IE6 */}
-ul,li{
-	list-style-type:none;
-}
+
+a, a:link, a:visited, a:hover, a:active, a:focus {color:#444444;}
+:focus {outline:0;}
+
+table {clear:both; border-collapse:collapse; border-spacing:0; border:none; /* tables still need 'cellspacing="0"' in the markup */}
+table td {vertical-align:top;}
+table th {text-align:left;}
+img, a img {border:none; color:#444444;}
+ins {text-decoration:none;}
+del {text-decoration:line-through;}
+hr {color:#ECECEC; background-color:#ECECEC; height:4px; width:100%; text-align:center; margin:20px auto; border:none;}
+small {display:block; font-size:0.9em; margin:0 0 6px 0;}
+small, blockquote, strike {color:#abaaaa;}
+pre {padding:0 0 0 16px; color:#DF721B;}
+code {font-family:'Courier New',Courier,Fixed;}
+acronym, abbr {font-size:0.9em; letter-spacing:.07em; cursor:help; border-bottom:1px dashed #999;}
+blockquote {margin:15px 30px 0 10px; padding-left:10px; border-left:5px solid #e28e97;}
+blockquote cite {margin:5px 0 0; display:block;}
+p {line-height:1.3em;}
+select * {padding-right:5px;} /* mozilla:do not place text behind the down arrow within <select> */
+ul {list-style:none;}
+hr {color:#ECECEC; background-color:#ECECEC; height:4px; width:100%; text-align:center; margin:20px auto; border:none;}
+hr.size8 {height:8px;}
+/* ~~~~~~~~~~~ default reset / END ~~~~~~~~~~~ */
+
 textarea { width:95%; }
 body {
 	height:100%;
