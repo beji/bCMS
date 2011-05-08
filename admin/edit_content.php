@@ -34,7 +34,7 @@ else{
 			<textarea id=\"cont\" class=\"mce\" name=\"content\" cols=\"50\" rows=\"15\">".$art['content']."</textarea>";
 		}
 		else{
-			"WEHEE";
+			"NOT YET IMPLEMENTED";
 		}
 	}
 }
