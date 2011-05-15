@@ -13,13 +13,13 @@ class Log {
 	}
 	function writeDebugLog($file,$line,$msg){
 		$handle = fopen($this->logpath."debug.log", "a+t");
-		$string = date("m.d.y H:i:s")." File: ".$file." on line: ".$line.": ".$msg."\n";
+		$string = date("m.d.y H:i:s")."URI: ".$_SERVER['REQUEST_URI']." File: ".$file." on line: ".$line.": ".$msg."\n";
 		fwrite($handle,$string);
 		fclose($handle);
 	}	
 	function writeErrorLog($file,$line,$msg){
 		$handle = fopen($this->logpath."error.log", "a+t");
-		$string = date("m.d.y H:i:s")." File: ".$file." on line: ".$line.": ".$msg."\n";
+		$string = date("m.d.y H:i:s")."URI: ".$_SERVER['REQUEST_URI']." File: ".$file." on line: ".$line.": ".$msg."\n";
 		fwrite($handle,$string);
 		fclose($handle);
 	}
@@ -30,6 +30,10 @@ class Log {
 	function clearErrorLog(){
 		$handle = fopen($this->logpath."error.log", "w+");
 		fclose($handle);
+	}
+	 
+	function writeLog($file=null,$line=null,$msg=null,$errortype="ERROR"){
+	   //NOT YET IMPLEMENTED
 	}
 }
 ?>
