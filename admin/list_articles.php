@@ -17,11 +17,11 @@ while ($cat=mysql_fetch_array($result)){
 };
 
 if(isset($_GET['cat']) && (strpos($_GET['cat']," "===false))){
-    $query = "SELECT  `bcms_content` . *
-FROM  `bcms_cat_cont`
-LEFT JOIN  `bcms`.`bcms_content` ON  `bcms_cat_cont`.`cont_id` =  `bcms_content`.`id`
+    $query = "SELECT  `".DB_PREFIX."content` . *
+FROM  `".DB_PREFIX."cat_cont`
+LEFT JOIN  `".DB_PREFIX."content` ON  `".DB_PREFIX."cat_cont`.`cont_id` =  `".DB_PREFIX."content`.`id`
 WHERE (
-`bcms_cat_cont`.`cat_alias` =  '".$_GET['cat']."'
+`".DB_PREFIX."cat_cont`.`cat_alias` =  '".$_GET['cat']."'
 )";
     
 }
