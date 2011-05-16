@@ -1,14 +1,23 @@
 <?php
+/**
+ * File that includes the Cache class
+ * @author beji (Bjoern Erlwein) <b.erlwein@gmx.de>
+ * @package includes
+ */
 if(!defined('IN_BCMS')) die;
-//Class to handle the basic caching
+/**
+ * Class to handle caching
+ * @todo make caching usefull
+ * @todo bother to write phpdoc for the class
+ */
 class Cache{
-	private $siteid;
-	private $type;
-	private $cachefolder="./cache/";
-	private $nocachefolder="./nocache/";
-	private $namepattern="cached-{TYPE}-{NAME}.html";
-	private $cachefile=0;
-	private $fileexists=0;
+	var $siteid;
+	var $type;
+	var $cachefolder="./cache/";
+	var $nocachefolder="./nocache/";
+	var $namepattern="cached-{TYPE}-{NAME}.html";
+	var $cachefile=0;
+	var $fileexists=0;
 	
 	function Cache() {}
 	/*Basic function to set up the caching, needs to be done first
