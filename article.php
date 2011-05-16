@@ -1,6 +1,14 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+/**
+ * Main file for displaying the articles
+ * @author beji (Bjoern Erlwein) <b.erlwein@gmx.de>
+ * @package main_files
+ */
+/**
+ * This define is used for a simple lockout
+ * 
+ * Every include has a check if this definition is set
+ */
 define('IN_BCMS',true);
 require "inc/config.php";
 
@@ -26,8 +34,8 @@ if(!$config->GetValue("CACHING") || !$content){
 	
 	$template->assignVars($arr=array(
 				'CONT'			=>	$article->GetArticle(),
-				'TITLE'			=>	$config->GetValue("TITLE").gettitle($artno),
-				'HEAD_TITLE'	=>	$config->GetValue("HEAD_TITLE"),
+				'TITLE'			=>	$config->GetValue("TITLE").getTitle($artno),
+				'HEAD_TITLE'	=>	'<a href="index.php">'.$config->GetValue("HEAD_TITLE").'</a>',
 				'NAV'			=>	createnav($artno),
 				'PAGES'			=>	""	//No need for multiple pages. Leaves an empty Container but who cares...
 				));

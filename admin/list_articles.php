@@ -1,4 +1,11 @@
 <?php
+/**
+ * admin/list_articles.php
+ * 
+ * Used to generate the list of articles in the backend to edit/delete articles
+ * @author beji (Bjoern Erlwein) <b.erlwein@gmx.de>
+ * @package backend
+ */
 if(!defined('IN_BCMS')) die;
 include_once "../inc/config.php";
 include_once "../inc/loc.php";

@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * The data used for the db connection
+ * @author beji (Bjoern Erlwein) <b.erlwein@gmx.de>
+ * @package includes
+ */
 if(!defined('IN_BCMS')) die;
 define('MYSQL_HOST','localhost');
 define('MYSQL_USER','root');

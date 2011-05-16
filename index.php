@@ -1,4 +1,14 @@
 <?php
+/**
+ * Main File for viewing the categories
+ * @author beji (Bjoern Erlwein) <b.erlwein@gmx.de>
+ * @package main_files
+ */
+/**
+ * This define is used for a simple lockout
+ * 
+ * Every include has a check if this definition is set
+ */
 define('IN_BCMS',true);
 require "./inc/config.php";
 $config = new Config();
@@ -60,8 +70,8 @@ if(!$config->GetValue("CACHING") || !$content){
 	 }
 	$template->assignVars($arr=array(
 				'CONT'			=>	getArticlesInCategory($id,($currentpage - 1) * $config->GetValue("ARTICLES_PER_PAGE")),
-				'TITLE'			=>	$config->GetValue("TITLE").gettitle($id),
-				'HEAD_TITLE'	=>	$config->GetValue("HEAD_TITLE"),
+				'TITLE'			=>	$config->GetValue("TITLE").getTitle($id),
+				'HEAD_TITLE'	=>	'<a href="index.php">'.$config->GetValue("HEAD_TITLE").'</a>',
 				'NAV'			=>	createnav($id),
 				'PAGES'			=>	$pages
 				));

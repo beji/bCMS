@@ -18,6 +18,15 @@
 <body>
 	
 <?php
+/**
+ * File used to install the system
+ * 
+ * Currently not up to date
+ * 
+ * @todo update it
+ * @author beji (Bjoern Erlwein) <b.erlwein@gmx.de>
+ * @package main_files
+ */
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 if(!isset($_GET['step']) || $_GET['step']==1){

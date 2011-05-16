@@ -1,4 +1,10 @@
 <?php
+/**
+ * Page for editing content 
+ * 
+ * @author beji (Bjoern Erlwein) <b.erlwein@gmx.de>
+ * @package backend
+ */
 define('IN_BCMS',true);
 include_once "../inc/config.php";
 include_once "../inc/loc.php";

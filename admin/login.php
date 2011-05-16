@@ -1,4 +1,13 @@
-<?php session_start(); 
+<?php 
+/**
+ * Backend Login
+ * 
+ * VERY basic login script
+ * @author beji (Bjoern Erlwein) <b.erlwein@gmx.de>
+ * @package backend
+ * @todo make something better
+ */
+session_start();
 define('IN_BCMS',true);?>
 <html>
 </html>
