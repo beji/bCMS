@@ -16,15 +16,17 @@
 	<div class="info-box-title">Description</div>
 	<div class="nav-bar">
 					<span class="disabled">Description</span> |
-													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
-						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
 						
 					</div>
 	<div class="info-box-body">
         		<!-- ========== Info from phpDoc block ========= -->
 <p class="short-description">Basic class to handle logging</p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> function to set the logpath</li>
+			</ul>
 		<p class="notes">
-			Located in <a class="field" href="_inc---log.php.html">/inc/log.php</a> (line <span class="field">6</span>)
+			Located in <a class="field" href="_inc---log.php.html">/inc/log.php</a> (line <span class="field">14</span>)
 		</p>
 		
 				
@@ -35,35 +37,13 @@
 
 
 
-	<a name="sec-var-summary"></a>
-	<div class="info-box">
-		<div class="info-box-title">Variable Summary</span></div>
-		<div class="nav-bar">
-			<a href="#sec-description">Description</a> |
-						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
-							| 
-									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
-							
-								</div>
-		<div class="info-box-body">
-			<div class="var-summary">
-																								<div class="var-title">
-					<span class="var-type">mixed</span>
-					<a href="#$logpath" title="details" class="var-name">$logpath</a>
-				</div>
-											</div>
-		</div>
-	</div>
 
 	<a name="sec-method-summary"></a>
 	<div class="info-box">
 		<div class="info-box-title">Method Summary</span></div>
 		<div class="nav-bar">
 			<a href="#sec-description">Description</a> |
-																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
-				 
-				|
-						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
 		</div>
 		<div class="info-box-body">			
 			<div class="method-summary">
@@ -102,48 +82,13 @@
 		</div>
 	</div>		
 
-	<a name="sec-vars"></a>
-	<div class="info-box">
-		<div class="info-box-title">Variables</div>
-		<div class="nav-bar">
-			<a href="#sec-description">Description</a> |
-										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
-						
-			
-										| 
-									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
-							
-					</div>
-		<div class="info-box-body">
-			<a name="var$logpath" id="$logpath"><!-- --></A>
-<div class="evenrow">
-
-	<div class="var-header">
-		<span class="var-title">
-			<span class="var-type">mixed</span>
-			<span class="var-name">$logpath</span>
-						(line <span class="line-number">8</span>)
-		</span>
-	</div>
-
-	<!-- ========== Info from phpDoc block ========= -->
-	
-	
-		
-		
-
-</div>
-						
-		</div>
-	</div>
 	
 	<a name="sec-methods"></a>
 	<div class="info-box">
 		<div class="info-box-title">Methods</div>
 		<div class="nav-bar">
 			<a href="#sec-description">Description</a> |
-															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
-																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
 						
 		</div>
 		<div class="info-box-body">
@@ -153,7 +98,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">Constructor Log</span> (line <span class="line-number">9</span>)
+		<span class="method-title">Constructor Log</span> (line <span class="line-number">21</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -173,7 +118,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">clearDebugLog</span> (line <span class="line-number">41</span>)
+		<span class="method-title">clearDebugLog</span> (line <span class="line-number">55</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -193,7 +138,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">clearErrorLog</span> (line <span class="line-number">45</span>)
+		<span class="method-title">clearErrorLog</span> (line <span class="line-number">59</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -213,12 +158,13 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">writeDebugLog</span> (line <span class="line-number">23</span>)
+		<span class="method-title">writeDebugLog</span> (line <span class="line-number">36</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Function to write something into the debug log</p>
 	<ul class="tags">
-				<li><span class="field">deprecated:</span> use writeLog() instead</li>
+				<li><span class="field">todo:</span> replace this with writeLog()</li>
 			</ul>
 	
 	<div class="method-signature">
@@ -247,12 +193,13 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">writeErrorLog</span> (line <span class="line-number">35</span>)
+		<span class="method-title">writeErrorLog</span> (line <span class="line-number">49</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Function to write something into the error log</p>
 	<ul class="tags">
-				<li><span class="field">deprecated:</span> use writeLog() instead</li>
+				<li><span class="field">todo:</span> replace this with writeLog()</li>
 			</ul>
 	
 	<div class="method-signature">
@@ -281,10 +228,15 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">writeLog</span> (line <span class="line-number">56</span>)
+		<span class="method-title">writeLog</span> (line <span class="line-number">74</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Write something into a logfile</p>
+<p class="description"><p>This function will be used for a more flexible logging system.  Errortypes can be choosen freely, a seperate logfile will be created for every error type</p></p>
+	<ul class="tags">
+				<li><span class="field">todo:</span> write this function...</li>
+			</ul>
 	
 	<div class="method-signature">
 		<span class="method-result">void</span>
@@ -317,7 +269,7 @@
 
 
 	<p class="notes" id="credit">
-		Documentation generated on Mon, 16 May 2011 19:40:09 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+		Documentation generated on Thu, 19 May 2011 16:59:08 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
 	</p>
 	</div></body>
 </html>

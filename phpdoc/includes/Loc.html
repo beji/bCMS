@@ -21,8 +21,10 @@
 					</div>
 	<div class="info-box-body">
         		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The Localization class</p>
+<p class="description"><p>Maybe I should turn this into a function?</p></p>
 		<p class="notes">
-			Located in <a class="field" href="_inc---loc.php.html">/inc/loc.php</a> (line <span class="field">6</span>)
+			Located in <a class="field" href="_inc---loc.php.html">/inc/loc.php</a> (line <span class="field">18</span>)
 		</p>
 		
 				
@@ -45,9 +47,9 @@
 			<div class="method-summary">
 												
 												<div class="method-definition">
-											<span class="method-result">void</span>
+											<span class="method-result">string</span>
 										<a href="#getLocString" title="details" class="method-name">getLocString</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$string</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$lang</span> = <span class="var-default">0</span>])
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$placeHolder</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$lang</span> = <span class="var-default">0</span>])
 									</div>
 								</div>
 		</div>
@@ -66,29 +68,35 @@
 			<A NAME='method_detail'></A>
 
 <a name="methodgetLocString" id="getLocString"><!-- --></a>
-<div class="evenrow">
+<div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">getLocString</span> (line <span class="line-number">7</span>)
+		<span class="method-title">getLocString</span> (line <span class="line-number">30</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The (currently) only function of the class</p>
+<p class="description"><p>This function tries to get a localized string for a placeholder depending on the default language in the db  If the default language contains no translation for the placeholder it checks the enEN language file.  If nothing is found there it writes an Error</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> the localized string, returns &quot;&quot; if nothing was found</li>
+				<li><span class="field">see:</span> <a href="../includes/Log.html">Log</a></li>
+			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">string</span>
 		<span class="method-name">
 			getLocString
 		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$string</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$lang</span> = <span class="var-default">0</span>])
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$placeHolder</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$lang</span> = <span class="var-default">0</span>])
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$string</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$placeHolder</span><span class="var-description">: the placeholder used inside the php code</span>			</li>
 					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$lang</span>			</li>
+				<span class="var-type">string</span>
+				<span class="var-name">$lang</span><span class="var-description">: the language that should be checked first. if none is set it chooses the default language</span>			</li>
 				</ul>
 		
 			
@@ -99,7 +107,7 @@
 
 
 	<p class="notes" id="credit">
-		Documentation generated on Mon, 16 May 2011 19:40:09 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+		Documentation generated on Thu, 19 May 2011 16:59:08 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
 	</p>
 	</div></body>
 </html>
