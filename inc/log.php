@@ -71,8 +71,15 @@ class Log {
 	 * @param string $msg your errormessage
 	 * @param string $errortype the type of your error (e.g. ERROR, DEBUG)
 	 */
-	function writeLog($file=null,$line=null,$msg=null,$errortype="ERROR"){
-	   //NOT YET IMPLEMENTED
+	function writeLog($file=null,$line=null,$msg=null,$errortype="error"){
+		$handle = fopen($this->logpath.strtolower($errortype).".log", "a+");
+		$string = date("m.d.y H:i:s")."URI: ".$_SERVER['REQUEST_URI'];
+		if($file!=null) $string.=" File: ".$file;
+		if($line!=null) $string.=" on line: ".$line;
+		if($msg!=null) $msg.=": ".$msg;
+		$string.="\n";
+		fwrite($handle,$string);
+		fclose($handle);
 	}
 }
 ?>
