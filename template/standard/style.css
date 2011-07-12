@@ -85,6 +85,9 @@ body {
 	font-size:1.5em;
 	margin-bottom:5px;
 }
+#contentcontainer h1 a{
+	text-decoration:none;
+}
 #contentcontainer img{
 	border:solid 1px grey;
 	margin:5px;
